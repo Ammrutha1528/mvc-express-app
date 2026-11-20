@@ -13,6 +13,7 @@ app.use(express.json());
 //establishing connection with mongodb
 connectDB(MONGO_URI);
 
+app.get("/", (req, res) => res.json({ message: "MVC Express API is live and healthy", status: "OK", docs: "/api/v1/movies" }));
 app.use("/api/v1/movies", movieRoutes);
 
 //404
